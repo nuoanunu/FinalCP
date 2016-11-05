@@ -1,0 +1,164 @@
+﻿@using SSM.Models
+<div class="page-title">
+    <div class="title_left">
+        <h1 style="font-size:30px">Sale representative <small> Listing</small></h1>
+    </div>
+    <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_content">
+
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+                        <ul class="pagination pagination-split">
+                            <li>
+                                <a href="/Profile/SaleRepList">All</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=A">A</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=B">B</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=C">C</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=D">D</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=E">E</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=F">F</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=G">G</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=H">H</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=I">I</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=J">J</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=K">K</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=L">L</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=M">M</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=N">N</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=O">O</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=P">P</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=Q">Q</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=R">R</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=S">S</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=T">T</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=U">U</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=V">V</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=W">W</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=X">X</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=Y">Y</a>
+                            </li>
+                            <li>
+                                <a href="/Profile/SaleRepList?ln=Z">Z</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    @foreach (SaleRepProfile profile in (List<SaleRepProfile>)ViewData["ProfileList"])
+                    {
+                    <div class="col-lg-4 animated fadeInDown">
+                        <div class="well profile_view">
+                            <div class="col-sm-12">
+                                <h4 class="brief"><i>Sale Rep</i></h4>
+                                <div class="left col-xs-7">
+                                    <h2>@profile.FullName</h2>
+                                    <p><strong>Email: </strong> @profile.Email </p>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa fa-phone"></i> Phone: @profile.Phone </li>
+                                        <li><i class="fa fa-home"></i> Address: @profile.City</li>
+
+                                    </ul>
+                                </div>
+                                <div class="right col-xs-5 text-center">
+                                    <img src="@profile.Avatar" alt="" class="img-circle img-responsive">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 bottom text-center">
+                                <div class="col-xs-12 col-sm-6 emphasis">
+                                    <p class="ratings">
+                                        <a>@profile.AvarageKPI</a>
+                                        @for (int i = 1; i < 6; i++)
+                                        {
+                                            if (i <= profile.AvarageKPI)
+                                            {
+                                                <a href="#"><span class="fa fa-star"></span></a>
+                                            }
+                                            else
+                                            {
+                                                <a href="#"><span class="fa fa-star-o"></span></a>
+                                            }
+                                        }
+                                    </p>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 emphasis">
+                                    <a href="/Profile/Detail?id=@(profile.id)" type="button" class="btn btn-primary btn-xs">
+                                        <i class="fa fa-user">
+                                        </i> View Profile
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
